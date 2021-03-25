@@ -86,7 +86,7 @@ def extracts_jobs(last_page):
     for page in range(1):
         print(f"Scrapping Indeed : Page : {page+1}")
         # URL을 추가하고 page수와 LIMIT을 정하는 문자열을 연결시켜주었다.
-        #print(URL)
+        print(URL)
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, 'html.parser')
         # print(soup)
