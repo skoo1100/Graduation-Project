@@ -95,6 +95,7 @@ def extracts_jobs(last_page):
         for result in results:
             job = extract_job(result)
             id_jobs.append(job)
+
     return id_jobs
 
         

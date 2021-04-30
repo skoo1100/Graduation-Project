@@ -21,11 +21,12 @@ def get_last_page():
     else:
         return 0    
 
-def extract_jobs(last_page):
+def extract_jobs(last_page):   
     jk_jobs = []
     # for page in range(last_page):
     for page in range(1):
     #for page in range(1):
+        print(URL,page)
         print(f"Job-Koera page : {page+1}")
         result = requests.get(URL+f'&Page_No={page}')
         soup = BeautifulSoup(result.text, 'html.parser')
@@ -40,6 +41,7 @@ def extract_jobs(last_page):
                 companys = companys
             else :
                 companys = companys_a['title']
+            print(job)
             positions = job.find("div", {"class":"post-list-info"}).find("a")["title"]
             locations = job.find("div", {"class":"post-list-info"}).find("p").find("span", {"class":"loc short"}).string
             # ##질문!!! 여기서 구, 동을 가져오고 싶다.
