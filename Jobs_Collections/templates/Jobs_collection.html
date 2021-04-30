@@ -232,7 +232,7 @@
 
 
 
-        <div id="hot_jobs">
+        <div id="hot_jobs" style="width:400px; float:left">
             <div id="recruit_info">
                 <div id="recruit_info_box">
                     <h2 class="todays_news"> 오늘의 취업 관련 뉴스</h2>
@@ -252,20 +252,36 @@
                 
 
                    {% endfor %}
-
+    
+     
                 </div> 
-
-
 
             </div>
 
+        </div>
+        <div style="width:400px; float:left; ">
+            <div>채용 top 10</div>
+            {% for ml in data2 %}
+
+            <!-- https://jobkorea.co.kr{{ml[0]}} -->
+         <div>
+
+          <a>{{ml[1]}} : {{ml[0]}}</a>
+        </div>
+           
+        
+    
+           {% endfor %}
         </div>
 
         </div>
 
     </section>
+<!-- 
+    <iframe src="https://www.jobkorea.co.kr{{data[0][0]}}" width="100%" height="1000dp"> -->
 
     <aside>
+
 
     </aside>
 
