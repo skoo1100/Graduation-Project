@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.footer {
+	position:fixed; 
+
+  bottom:0px; 
+width: 100%;
+text-align: center;
+color: white;
+padding-bottom: 0px;
+
+}
+.body {
+		background-image : url('../images/dgu.JPG');
+		background-repeat : no-repeat;
+		background-size : cover;
+		
+	
+}
