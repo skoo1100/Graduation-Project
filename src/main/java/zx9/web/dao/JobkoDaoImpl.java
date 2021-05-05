@@ -12,6 +12,8 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import zx9.web.vo.jobVO;
+
 @Repository
 public class JobkoDaoImpl implements JobkoDao{
 	@Autowired
@@ -90,6 +92,55 @@ public class JobkoDaoImpl implements JobkoDao{
             	}
             	
             	return ranking;
+            
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+	@Override
+	public ArrayList<jobVO> getSearchResult(String baseurl) {
+		// TODO Auto-generated method stub
+		jobVO jvo=null;
+		Connection conn = Jsoup.connect(baseurl);
+		
+		try {
+			Document html = conn.get();
+			Elements items=html.select(".article");
+			items=items.select(".cnt-list-wrap");
+			items=items.select(".list-wrap");
+			items=items.select(".recruit-info");
+			items=items.select(".lists");
+			items=items.select(".list-default");
+			items=items.select(".clear");
+			
+			items=items.select("li");
+			int i=0;
+			ArrayList<ArrayList<String>> ranking=new ArrayList<ArrayList<String>>();
+
+			ArrayList<jobVO> result=new ArrayList<jobVO>();
+			
+	
+		
+			
+           
+            	for(Element k:items) {
+            		jvo=new jobVO();
+            		Elements corp=k.select(".post-list-corp");
+            		Elements info=k.select(".post-list-info");
+            		corp=corp.select("a");
+            		jvo.setUrl(corp.attr("href"));
+            		jvo.setCorp(corp.text());
+            		jvo.setTitle(info.select("a").attr("title"));
+            		result.add(jvo);
+            		
+            	}
+            	
+
+            	return result;
             
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

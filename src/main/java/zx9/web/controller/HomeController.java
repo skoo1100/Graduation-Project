@@ -36,6 +36,7 @@ import pwchange.bouncy_change;
 import zx9.web.dao.JobkoDao;
 import zx9.web.dao.UserDao;
 import zx9.web.vo.UserVO;
+import zx9.web.vo.jobVO;
 @Controller
 public class HomeController {
 
@@ -65,6 +66,41 @@ public class HomeController {
 		return "/template/index";
 	}
 
+	@RequestMapping("/search.do")
+	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype) {
+		//searchvalue/sitetype/location/jobtype
+		ArrayList<ArrayList<String>> sresult = null;
+		ArrayList<jobVO> jvo = null;
+		switch(sitetype) {
+		case "Job-korea":
+			System.out.println(searchvalue+sitetype+location+jobtype);
+			String baseurl="https://www.jobkorea.co.kr/Search/?stext=";
+			baseurl+=searchvalue;
+			baseurl+="&Page_No=1";
+			
+			System.out.println(baseurl);
+			jvo=jkdao.getSearchResult(baseurl);
+			break;
+		default:
+			break;
+			
+		}
+		for(jobVO r:jvo) {
+			System.out.println(r.getTitle());
+		}
+		
+		m.addAttribute("result",jvo);
+		
+
+		
+		//https://www.jobkorea.co.kr/Search/?stext=%EC%9E%90%EB%B0%94
+		//https://www.jobkorea.co.kr/Search/?stext=%EC%9E%90%EB%B0%94&local=I000
+		//https://www.jobkorea.co.kr/Search/?stext=%EC%9E%90%EB%B0%94&local=I000&jobtype=3
+		//https://www.jobkorea.co.kr/Search/?stext=%EC%9E%90%EB%B0%94&jobtype=3
+		
+		return "/jobsearch";
+	}
+	
 	@RequestMapping("/crawl.do")
 	public String crawl() {
         try {
