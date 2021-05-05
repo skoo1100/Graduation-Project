@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public interface JobkoDao {
 
-	void getNews();
+	ArrayList<ArrayList<String>> getNews();
 
-	ArrayList<String> getRank();
+	ArrayList<ArrayList<String>> getRank();
 
 }

@@ -50,12 +50,18 @@ public class HomeController {
 	
 	@RequestMapping("/index.do")
 	public String home(Model m) {
-		ArrayList<String> ranking;
+		ArrayList<ArrayList<String>> ranking;
 		jkdao.getNews();
 		ranking=jkdao.getRank();
-		
+		ArrayList<ArrayList<String>> news;
+		news=jkdao.getNews();
+	
+
 		
 		m.addAttribute("ranking",ranking);
+		
+		m.addAttribute("news",news);
+
 		return "/template/index";
 	}
 

@@ -64,11 +64,62 @@ height:500px;
 	</div>
 	
 
+<div>
 
+	<div id="header_input">
+		<div id="input_div">
+
+		<form accept-charset="UTF-8" role="form" action="search.do" method="get">
+			<input class="input_company" placeholder=" 검색어 입력" />
+
+			<select class="input_potal">
+				<option>전체 (포탈 선택)</option>
+				<option>Job-korea</option>
+				<option>Saram-in</option>
+				<option>Indeed</option>
+			</select>
+
+			<select class="input_location">
+				<option selected>전체(희망 지역)</option>
+				<option>서울</option>
+				<option>경기</option>
+				<option>인천</option>
+				<option>부산</option>
+				<option>대구</option>
+				<option>광주</option>
+				<option>대전</option>
+				<option>울산</option>
+				<option>세종</option>
+				<option>강원</option>
+				<option>경남</option>
+				<option>경북</option>
+				<option>전남</option>
+				<option>전북</option>
+				<option>충남</option>
+				<option>충북</option>
+				<option>제주</option>
+			</select>
+
+			<select class="input_jobtype">
+				<option selected>전체(근무 형태)</option>
+				<option>정규직</option>
+				<option>계약직</option>
+				<option>인턴</option>
+				<option>아르바이트</option>
+				<option>병역특례</option>
+			</select>
+
+			<input type="submit" value="검색" class="search_btn">
+				
+			</form>
+		</div>
+	</div>
+	</div>
 <div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
-			&nbsp;&nbsp;최신 강의 목록</h3>	
+			검색 결과 <span class="glyphicon glyphicon-ok"></span>
+			</h3>	
 		</div>
 		<div class="panel-body">
 			<div class="media"><!-- 사진이나 동영상을 담는 클래스 -->
@@ -88,7 +139,8 @@ height:500px;
 				  <c:if test="${!empty ranking }">
    <c:forEach var= "b" items="${ranking }">
    <tr>
-    <th>${b }</th><br>
+  
+    <th><a href="${b[0] }">${b[1] }</a></th><br>
 
   </tr></c:forEach></c:if>
   
@@ -105,22 +157,14 @@ height:500px;
 	<c:if test="${!empty news }">
    <c:forEach var= "b" items="${news }">
    <tr>
-    <th>${b }</th><br>
+    <th><a href="https://www.jobkorea.co.kr${b[0] }">${b[1] }</a></th><br>
 
   </tr></c:forEach></c:if>
 				
 				
 				</div>
 			 </div><hr>
-			 <div class="media">
-				<div class="media-left">
-					<a href="lecture.jsp?lectureName=Android"><img class="media-object" src="images/apple.png" alt="안드로이드 강의 이미지"></a>
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading"> <a href="lecture.jsp?lectureName=Android">안드로이드&nbsp;<span class="badge">New</span></a></h4>
-				안드로이드는 db연결이 어려우어요오ㅗ오오
-				</div>
-			 </div>
+
 		</div>
 	
 	</div>
@@ -130,10 +174,10 @@ height:500px;
 
 
 
-
 	
 </div>
 
+<div style="height:200px"></div>
 
 <div class="footer">
 <%@include file="footer.jsp"%>

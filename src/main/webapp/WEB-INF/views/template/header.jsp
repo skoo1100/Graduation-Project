@@ -23,12 +23,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.do">Every dongguk</a>
+			<a class="navbar-brand" href="index.do">Pigeon</a>
 			
 			<c:if test="${Siscouncil==10}">
-			<a class="navbar-brand" href="userall.do">유저 권한 관리</a>
-			<a class="navbar-brand" href="bankall.do">단과별 학생회비 계좌 관리</a>
-			
+			<a class="navbar-brand" href="userall.do">뉴스 보러가기</a>
+			<a class="navbar-brand" href="bankall.do">취준 게시판</a>
 			</c:if>
 		</div>	
 		
