@@ -19,6 +19,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -187,8 +189,8 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping("/androidtest.do")// 由ъ뒪�듃瑜� 蹂대궡湲�
-	public @ResponseBody String andr(String id,String pw) {
+	@RequestMapping("/androidtest.do")// 由ъ뒪�듃瑜� 蹂대궡湲�   @ResponseBody String
+	public  ResponseEntity<String> andr(String id,String pw) {
 		System.out.println("�삤�삤�뀠�삤�삤�삤�삤�뀠�삤�삤");
 		System.out.println(id+","+pw);
         // json-simple �씪�씠釉뚮윭由� 異붽� �븘�슂(JSON 媛앹껜 �깮�꽦)
@@ -215,10 +217,12 @@ public class HomeController {
         }
         // json媛앹껜�뿉 諛곗뿴�쓣 �꽔�쓬
         jsonMain.put("sendData", jArray);
-        return jsonMain.toJSONString();
+        //return jsonMain.toJSONString();
+        	return new  ResponseEntity<String>(jsonMain.toJSONString(),HttpStatus.OK);
 	}
 	@RequestMapping("/andtest.do")// �떒�씪 媛믩뱾 蹂대궡湲�
-	public @ResponseBody String andtest(String id,String pw, HttpServletResponse response,HttpServletRequest request ) throws IOException {
+	//@ResponseBody String   원래 리턴타입
+	public  ResponseEntity<String> andtest(String id,String pw, HttpServletResponse response,HttpServletRequest request ) throws IOException {
 		System.out.println("andtest");
 		HttpSession session=request.getSession();
 		String bid= (String)session.getAttribute("bid");
@@ -232,7 +236,8 @@ public class HomeController {
 			 jsonMain.put("Bid",bid);
 			 jsonMain.put("test","test");
 			// System.out.println(pwd);		
-				return jsonMain.toJSONString();
+				//return jsonMain.toJSONString();   원래 리턴 ... 근데 결과는 같네..?
+				return new ResponseEntity<String>(jsonMain.toJSONString(),HttpStatus.OK);
 		//	return jsonMain;
 	}
 	
