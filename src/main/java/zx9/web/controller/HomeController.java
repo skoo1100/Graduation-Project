@@ -35,7 +35,9 @@ import org.tensorflow.TensorFlow;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
 import pwchange.bouncy_change;
+import zx9.web.dao.IndeedDao;
 import zx9.web.dao.JobkoDao;
+import zx9.web.dao.SaramDao;
 import zx9.web.dao.UserDao;
 import zx9.web.vo.UserVO;
 import zx9.web.vo.jobVO;
@@ -48,6 +50,10 @@ public class HomeController {
 	UserDao udao;	
 	@Autowired
 	JobkoDao jkdao;
+	@Autowired
+	SaramDao sdao;
+	@Autowired
+	IndeedDao idao;
 	
 	bouncy_change crt = new bouncy_change();
 	
@@ -71,25 +77,43 @@ public class HomeController {
 	@RequestMapping("/search.do")
 	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype) {
 		//searchvalue/sitetype/location/jobtype
-		ArrayList<ArrayList<String>> sresult = null;
 		ArrayList<jobVO> jvo = null;
+		String baseurl;
 		switch(sitetype) {
 		case "Job-korea":
+		
 			System.out.println(searchvalue+sitetype+location+jobtype);
-			String baseurl="https://www.jobkorea.co.kr/Search/?stext=";
+			 baseurl="https://www.jobkorea.co.kr/Search/?stext=";
 			baseurl+=searchvalue;
 			baseurl+="&Page_No=1";
 			
 			System.out.println(baseurl);
 			jvo=jkdao.getSearchResult(baseurl);
 			break;
+		case "Saram-in":
+		
+			baseurl="https://www.saramin.co.kr/zf_user/search/recruit?searchType=search&searchword=";
+			baseurl+=searchvalue;
+			baseurl+="%EC%9E%90%EB%B0%94&recruitPage=";
+			baseurl+="1";
+			baseurl+="&recruitPageCount=20";
+			System.out.println(baseurl);
+			jvo=sdao.getSearchResult(baseurl);
+			         	break;
+		
 		default:
+			baseurl="https://kr.indeed.com/jobs?q=";
+			baseurl+=searchvalue;
+			baseurl+="&start=20";
+			System.out.println(baseurl);
+
+			jvo=idao.getSearchResult(baseurl);
+			
+			
 			break;
 			
 		}
-		for(jobVO r:jvo) {
-			System.out.println(r.getTitle());
-		}
+
 		
 		m.addAttribute("result",jvo);
 		

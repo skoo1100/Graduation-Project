@@ -3,6 +3,7 @@ package zx9.web.vo;
 public class jobVO {
  String url;
  String title;
+ String corp;
  public String getUrl() {
 	return url;
 }
@@ -21,5 +22,5 @@ public String getCorp() {
 public void setCorp(String corp) {
 	this.corp = corp;
 }
-String corp;
+
 }

@@ -78,12 +78,12 @@
 						<input type="text" name="searchvalue" class="input_company"
 							placeholder=" 검색어 입력" /> <select class="input_potal"
 							name="sitetype">
-							<option>전체 (포탈 선택)</option>
+							
 							<option>Job-korea</option>
 							<option>Saram-in</option>
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
-							<option selected>전체(희망 지역)</option>
+							
 							<option>서울</option>
 							<option>경기</option>
 							<option>인천</option>
@@ -102,7 +102,7 @@
 							<option>충북</option>
 							<option>제주</option>
 						</select> <select class="input_jobtype" name="jobtype">
-							<option selected>전체(근무 형태)</option>
+							
 							<option>정규직</option>
 							<option>계약직</option>
 							<option>인턴</option>

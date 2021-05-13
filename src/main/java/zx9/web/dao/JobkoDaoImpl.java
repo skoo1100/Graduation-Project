@@ -122,7 +122,7 @@ public class JobkoDaoImpl implements JobkoDao{
 			ArrayList<ArrayList<String>> ranking=new ArrayList<ArrayList<String>>();
 
 			ArrayList<jobVO> result=new ArrayList<jobVO>();
-			
+			String burl="https://www.jobkorea.co.kr";
 	
 		
 			
@@ -132,7 +132,7 @@ public class JobkoDaoImpl implements JobkoDao{
             		Elements corp=k.select(".post-list-corp");
             		Elements info=k.select(".post-list-info");
             		corp=corp.select("a");
-            		jvo.setUrl(corp.attr("href"));
+            		jvo.setUrl(burl+corp.attr("href"));
             		jvo.setCorp(corp.text());
             		jvo.setTitle(info.select("a").attr("title"));
             		result.add(jvo);

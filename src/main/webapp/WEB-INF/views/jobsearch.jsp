@@ -115,7 +115,7 @@ vertical-align:-0.4em;
    <c:forEach var= "list" items="${result }">
   
    <tr>
-    <th><a href="https://www.jobkorea.co.kr${list.getUrl() }" target="top">${list.getTitle() }</a></th>
+    <th><a href="${list.getUrl() }" target="top">${list.getTitle() }</a></th>
     <th>${list.getCorp() }</th>
 
 
