@@ -79,31 +79,62 @@ public class HomeController {
 		//searchvalue/sitetype/location/jobtype
 		ArrayList<jobVO> jvo = null;
 		String baseurl;
+		
 		switch(sitetype) {
 		case "Job-korea":
 		
+			if (location.equals("서울")) {
+				
+			}
+			switch(location) {
+			case "인천":
+				location="K000";
+				break;
+			case "경기":
+				location="B000";
+				break;
+			default: 
+				location="1000";
+			break;
+				
+			}
 			System.out.println(searchvalue+sitetype+location+jobtype);
 			 baseurl="https://www.jobkorea.co.kr/Search/?stext=";
 			baseurl+=searchvalue;
+			baseurl+=("&local="+location);
 			baseurl+="&Page_No=1";
 			
 			System.out.println(baseurl);
 			jvo=jkdao.getSearchResult(baseurl);
 			break;
 		case "Saram-in":
-		
+			switch(location) {
+			case "인천":
+				location="108000";
+				break;
+			case "경기":
+				location="102000";
+				break;
+			default: 
+				location="101000";
+			break;
+				
+			}
 			baseurl="https://www.saramin.co.kr/zf_user/search/recruit?searchType=search&searchword=";
 			baseurl+=searchvalue;
-			baseurl+="%EC%9E%90%EB%B0%94&recruitPage=";
+			baseurl+="&recruitPage=";
 			baseurl+="1";
+			baseurl+=("&loc_mcd="+location);
 			baseurl+="&recruitPageCount=20";
 			System.out.println(baseurl);
 			jvo=sdao.getSearchResult(baseurl);
 			         	break;
+
 		
 		default:
 			baseurl="https://kr.indeed.com/jobs?q=";
 			baseurl+=searchvalue;
+			baseurl+=("&l="+location);
 			baseurl+="&start=20";
 			System.out.println(baseurl);
 
