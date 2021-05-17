@@ -116,67 +116,49 @@
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-pencil"></span> 검색 결과 <span
+				<h3 style="text-align:center">
+					<span class="glyphicon glyphicon-pencil"></span> Top10 & News <span
 						class="glyphicon glyphicon-ok"></span>
 				</h3>
 			</div>
-			<div class="panel-body">
-				<div class="media">
-					<!-- 사진이나 동영상을 담는 클래스 -->
-					<!-- 	<div class="media-left">
-					<a href="lecture.jsp?lectureName=C">
-					<img class="media-object" src="images/apple.png" alt="c언어 강의 이미지">
-					</a>
-				</div> -->
-					<div class="media-body">
-						<h4 class="media-heading">
-							<a href="lecture.jsp?lectureName=C"> Top 10 검색어&nbsp; <span
-								class="badge">Ranking Top 10!!</span></a>
-						</h4>
 
-
+						<table class="table">
+						<thead>		<tr style="text-align:center"><td>	
+						<a href="lecture.jsp?lectureName=C"> Top 10 검색어&nbsp; <span
+								class="badge">Ranking Top 10!!</span></a></td></tr></thead>
 
 						<c:if test="${!empty ranking }">
 							<c:forEach var="b" items="${ranking }">
 								<tr>
 
 									<th><a href="${b[0] }">${b[1] }</a></th>
-									<br>
+								
 
 								</tr>
 							</c:forEach>
 						</c:if>
+</table>
+			
 
-					</div>
-				</div>
-				<hr>
-				<div class="media">
-					<!--  <div class="media-left">
-					<a href="lecture.jsp?lectureName=Java"><img class="media-object" src="images/apple.png" alt="자바 강의 이미지"></a>
-				</div>-->
-					<div class="media-body">
-						<h4 class="media-heading">
+			
+					<table class="table">
+					<thead><tr style="text-align:center"><td>
 							<a href="lecture.jsp?lectureName=Java">취업 뉴스&nbsp;<span
-								class="badge">News</span></a>
-						</h4>
+								class="badge">News</span></a></td></tr>
+</thead>
 
 						<c:if test="${!empty news }">
 							<c:forEach var="b" items="${news }">
 								<tr>
 									<th><a href="https://www.jobkorea.co.kr${b[0] }">${b[1] }</a></th>
-									<br>
-
+					
 								</tr>
 							</c:forEach>
 						</c:if>
 
-
-					</div>
-				</div>
+</table>
+				
 				<hr>
-
-			</div>
 
 		</div>
 
