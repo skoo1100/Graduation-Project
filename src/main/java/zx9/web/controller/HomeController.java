@@ -136,7 +136,7 @@ public class HomeController {
 			case "제주":
 				location="&local=N000";
 				break;
-			default: 
+			default :
 				location="";
 			break;
 			}
@@ -196,8 +196,6 @@ public class HomeController {
 			case "서울":
 				location="101000";
 				break;
-
-
 			case "인천":
 				location="108000";
 				break;
@@ -246,7 +244,6 @@ public class HomeController {
 			case "제주":
 				location="116000";
 				break;
-
 			default: 
 				location="101000";
 			break;
@@ -278,13 +275,13 @@ public class HomeController {
 				pay = "&sal_min=6";
 				break;
 			case "3000만원 이상":
-				pay = "";
+				pay = "&sal_min=11";
 				break;
 			case "4000만원 이상":
-				pay = "";
+				pay = "&sal_min=16";
 				break;
 			case "5000만원 이상":
-				pay = "";
+				pay = "&sal_min=17";
 				break;
 			default: 
 				pay = "";
@@ -294,6 +291,10 @@ public class HomeController {
 			baseurl+=searchvalue;
 			baseurl+="&recruitPage=";
 			baseurl+="1";
+			baseurl+="&jobtype=";
+			baseurl+=jobtype;
+			
+			
 			baseurl+=("&loc_mcd="+location);
 			baseurl+="&recruitPageCount=20";
 			System.out.println(baseurl);
@@ -302,8 +303,47 @@ public class HomeController {
 
 		
 		default:
+			
+			switch(jobtype) {
+			case "정규직":
+				jobtype = "&jt=fulltime";
+				break;
+			case "계약직":
+				jobtype = "&jt=contract";
+				break;
+			case "인턴":
+				jobtype = "&jt=internship";
+				break;
+			case "아르바이트":
+				jobtype = "&jt=parttime";
+				break;
+			case "병역특례":
+				jobtype = "&jt=new_grad";
+				break;
+			default: 
+				jobtype = "";
+				break;
+			}
+			
+			switch(pay) {
+			case "2000만원 이상":
+				pay = "20000000";
+				break;
+			case "3000만원 이상":
+				pay = "30000000";
+				break;
+			case "4000만원 이상":
+				pay = "40000000";
+				break;
+			case "5000만원 이상":
+				pay = "50000000";
+				break;
+			default: 
+				pay = "";
+				break;
+			}
 			baseurl="https://kr.indeed.com/jobs?q=";
-			baseurl+=searchvalue;
+			baseurl+=(searchvalue+pay);
 			baseurl+=("&l="+location);
 			baseurl+="&start=20";
 			System.out.println(baseurl);

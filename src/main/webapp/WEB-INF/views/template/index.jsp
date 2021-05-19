@@ -26,7 +26,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
 #testdiv {
 	width: 100%;
 	height: 500px;
