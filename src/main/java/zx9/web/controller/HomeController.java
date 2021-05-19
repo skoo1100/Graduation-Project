@@ -60,7 +60,7 @@ public class HomeController {
 	@RequestMapping("/index.do")
 	public String home(Model m) {
 		ArrayList<ArrayList<String>> ranking;
-		jkdao.getNews();
+
 		ranking=jkdao.getRank();
 		ArrayList<ArrayList<String>> news;
 		news=jkdao.getNews();
@@ -75,33 +75,116 @@ public class HomeController {
 	}
 
 	@RequestMapping("/search.do")
-	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype) {
-		//searchvalue/sitetype/location/jobtype
+	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype,String pay) {
+		//searchvalue/sitetype/location/jobtype/pay
+
 		ArrayList<jobVO> jvo = null;
 		String baseurl;
 		
 		switch(sitetype) {
 		case "Job-korea":
 		
-			if (location.equals("서울")) {
-				
-			}
 			switch(location) {
+			case "서울":
+				location="&local=I000";
+				break;
 			case "인천":
-				location="K000";
+				location="&local=K000";
 				break;
 			case "경기":
-				location="B000";
+				location="&local=B000";
+				break;
+			case "부산":
+				location="&local=H000";
+				break;
+			case "대구":
+				location="&local=F000";
+				break;
+			case "광주":
+				location="&local=E000";
+				break;
+			case "대전":
+				location="&local=G000";
+				break;
+			case "울산":
+				location="&local=J000";
+				break;
+			case "세종":
+				location="&local=1000";
+				break;
+			case "강원":
+				location="&local=A000";
+				break;
+			case "경남":
+				location="&local=C000";
+				break;
+			case "경북":
+				location="&local=D000";
+				break;
+			case "전남":
+				location="&local=L000";
+				break;
+			case "전북":
+				location="&local=M000";
+				break;
+			case "충남":
+				location="&local=O000";
+				break;
+			case "충북":
+				location="&local=P000";
+				break;
+			case "제주":
+				location="&local=N000";
 				break;
 			default: 
-				location="1000";
+				location="";
 			break;
-				
+			}
+			
+			switch(jobtype) {
+			case "정규직":
+				jobtype = "&jobtype=1";
+				break;
+			case "계약직":
+				jobtype = "&jobtype=2";
+				break;
+			case "인턴":
+				jobtype = "&jobtype=3";
+				break;
+			case "아르바이트":
+				jobtype = "&jobtype=7";
+				break;
+			case "병역특례":
+				jobtype = "&jobtype=9";
+				break;
+			default: 
+				jobtype = "";
+				break;
+			}
+			
+			switch(pay) {
+			case "2000만원 이상":
+				pay = "&payType=1&payMin=2000";
+				break;
+			case "3000만원 이상":
+				pay = "&payType=1&payMin=3000";
+				break;
+			case "4000만원 이상":
+				pay = "&payType=1&payMin=4000";
+				break;
+			case "5000만원 이상":
+				pay = "&payType=1&payMin=5000";
+				break;
+			default: 
+				pay = "";
+				break;
 			}
 			System.out.println(searchvalue+sitetype+location+jobtype);
-			 baseurl="https://www.jobkorea.co.kr/Search/?stext=";
+			baseurl="https://www.jobkorea.co.kr/Search/?stext=";
 			baseurl+=searchvalue;
-			baseurl+=("&local="+location);
+			baseurl+=location;
+			baseurl+=jobtype;
+			baseurl+=pay;
 			baseurl+="&Page_No=1";
 			
 			System.out.println(baseurl);
@@ -109,16 +192,103 @@ public class HomeController {
 			break;
 		case "Saram-in":
 			switch(location) {
+
+			case "서울":
+				location="101000";
+				break;
+
+
 			case "인천":
 				location="108000";
 				break;
 			case "경기":
 				location="102000";
 				break;
+			case "부산":
+				location="106000";
+				break;
+			case "대구":
+				location="104000";
+				break;
+			case "광주":
+				location="103000";
+				break;
+			case "대전":
+				location="105000";
+				break;
+			case "울산":
+				location="107000";
+				break;
+			case "세종":
+				location="118000";
+				break;
+			case "강원":
+				location="109000";
+				break;
+			case "경남":
+				location="110000";
+				break;
+			case "경북":
+				location="111000";
+				break;
+			case "전남":
+				location="112000";
+				break;
+			case "전북":
+				location="113000";
+				break;
+			case "충남":
+				location="115000";
+				break;
+			case "충북":
+				location="114000";
+				break;
+			case "제주":
+				location="116000";
+				break;
+
 			default: 
 				location="101000";
 			break;
-				
+			}
+			
+			switch(jobtype) {
+			case "정규직":
+				jobtype = "1";
+				break;
+			case "계약직":
+				jobtype = "2";
+				break;
+			case "인턴":
+				jobtype = "4";
+				break;
+			case "아르바이트":
+				jobtype = "5";
+				break;
+			case "병역특례":
+				jobtype = "3";
+				break;
+			default: 
+				jobtype = "";
+				break;
+			}
+			
+			switch(pay) {
+			case "2000만원 이상":
+				pay = "&sal_min=6";
+				break;
+			case "3000만원 이상":
+				pay = "";
+				break;
+			case "4000만원 이상":
+				pay = "";
+				break;
+			case "5000만원 이상":
+				pay = "";
+				break;
+			default: 
+				pay = "";
+				break;
 			}
 			baseurl="https://www.saramin.co.kr/zf_user/search/recruit?searchType=search&searchword=";
 			baseurl+=searchvalue;
