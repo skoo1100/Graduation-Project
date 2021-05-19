@@ -98,6 +98,14 @@ vertical-align:-0.4em;
 							<option>인턴</option>
 							<option>아르바이트</option>
 							<option>병역특례</option>
+
+						</select><select class="input_pay" name="pay">
+							<option selected>전체(연봉)</option>
+							<option>2000만원 이상</option>
+							<option>3000만원 이상</option>
+							<option>4000만원 이상</option>
+							<option>5000만원 이상</option>
+
 						</select> <input type="submit" value="검색" class="search_btn">
 
 					</form>
