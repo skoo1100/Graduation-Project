@@ -26,7 +26,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
 #testdiv {
 	width: 100%;
 	height: 500px;
@@ -83,7 +82,7 @@
 							<option>Saram-in</option>
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
-							
+							<option selected>전체(희망 지역)</option>
 							<option>서울</option>
 							<option>경기</option>
 							<option>인천</option>
@@ -102,12 +101,18 @@
 							<option>충북</option>
 							<option>제주</option>
 						</select> <select class="input_jobtype" name="jobtype">
-							
+							<option selected>전체(근무 형태)</option>
 							<option>정규직</option>
 							<option>계약직</option>
 							<option>인턴</option>
 							<option>아르바이트</option>
 							<option>병역특례</option>
+						</select><select class="input_pay" name="pay">
+							<option selected>전체(연봉)</option>
+							<option>2000만원 이상</option>
+							<option>3000만원 이상</option>
+							<option>4000만원 이상</option>
+							<option>5000만원 이상</option>
 						</select> <input type="submit" value="검색" class="search_btn">
 
 					</form>
