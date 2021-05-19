@@ -317,6 +317,7 @@ public class HomeController {
 
 		
 		m.addAttribute("result",jvo);
+		m.addAttribute("count",jvo.size());
 		
 
 		
