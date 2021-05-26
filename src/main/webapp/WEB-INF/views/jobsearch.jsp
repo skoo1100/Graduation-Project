@@ -68,7 +68,7 @@ vertical-align:-0.4em;
 						<input type="text" name="searchvalue" class="input_company"
 							placeholder=" 검색어 입력" /> <select class="input_potal"
 							name="sitetype">
-							<option>전체 (포탈 선택)</option>
+							<option>전체(포탈 선택)</option>
 							<option>Job-korea</option>
 							<option>Saram-in</option>
 							<option>Indeed</option>
@@ -98,25 +98,38 @@ vertical-align:-0.4em;
 							<option>인턴</option>
 							<option>아르바이트</option>
 							<option>병역특례</option>
+
 						</select><select class="input_pay" name="pay">
 							<option selected>전체(연봉)</option>
 							<option>2000만원 이상</option>
 							<option>3000만원 이상</option>
 							<option>4000만원 이상</option>
 							<option>5000만원 이상</option>
+
 						</select> <input type="submit" value="검색" class="search_btn">
 
 					</form>
 				</div>
 			</div></td>
-  				<td colspan="5" align="right"> 총 내역 목록 : <b>  </b>개
+				<c:if test="${!empty result }">
+	  			 <c:forEach var= "list" items="${result }" varStatus= "status">
+	  			 <c:choose>
+	  			 <c:when test="${!status.last }">
+	  			 </c:when>
+	  			 <c:otherwise>
+  				<td colspan="5" align="right"> 총 내역 목록 : <b > ${status.count} </b>개
+  				</c:otherwise>
+  				</c:choose>
+  				
+  				</c:forEach>
+  				</c:if>
   			</tr>
 			<tr>
 			<th>Title</th>	<th>회사명</th>	
 			</tr>
 			</thead>
 			<tbody>
-	  <c:if test="${!empty result }">
+		<c:if test="${!empty result }">
 	  
    <c:forEach var= "list" items="${result }">
   

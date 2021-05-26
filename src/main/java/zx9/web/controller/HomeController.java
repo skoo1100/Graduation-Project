@@ -60,7 +60,7 @@ public class HomeController {
 	@RequestMapping("/index.do")
 	public String home(Model m) {
 		ArrayList<ArrayList<String>> ranking;
-		jkdao.getNews();	
+
 		ranking=jkdao.getRank();
 		ArrayList<ArrayList<String>> news;
 		news=jkdao.getNews();
@@ -77,15 +77,13 @@ public class HomeController {
 	@RequestMapping("/search.do")
 	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype,String pay) {
 		//searchvalue/sitetype/location/jobtype/pay
-		ArrayList<jobVO> jvo = null;
+
+		ArrayList<jobVO> jvo = null, jvo2 = null, jvo3 = null;
 		String baseurl;
 		
 		switch(sitetype) {
 		case "Job-korea":
 		
-			if (location.equals("서울")) {
-				
-			}
 			switch(location) {
 			case "서울":
 				location="&local=I000";
@@ -138,7 +136,7 @@ public class HomeController {
 			case "제주":
 				location="&local=N000";
 				break;
-			default: 
+			default :
 				location="";
 			break;
 			}
@@ -193,7 +191,9 @@ public class HomeController {
 			jvo=jkdao.getSearchResult(baseurl);
 			break;
 		case "Saram-in":
+			
 			switch(location) {
+
 			case "서울":
 				location="101000";
 				break;
@@ -246,7 +246,7 @@ public class HomeController {
 				location="116000";
 				break;
 			default: 
-				location="";
+				location="101000";
 			break;
 			}
 			
@@ -276,13 +276,13 @@ public class HomeController {
 				pay = "&sal_min=6";
 				break;
 			case "3000만원 이상":
-				pay = "";
+				pay = "&sal_min=11";
 				break;
 			case "4000만원 이상":
-				pay = "";
+				pay = "&sal_min=16";
 				break;
 			case "5000만원 이상":
-				pay = "";
+				pay = "&sal_min=17";
 				break;
 			default: 
 				pay = "";
@@ -292,6 +292,10 @@ public class HomeController {
 			baseurl+=searchvalue;
 			baseurl+="&recruitPage=";
 			baseurl+="1";
+			baseurl+="&jobtype=";
+			baseurl+=jobtype;
+			
+			
 			baseurl+=("&loc_mcd="+location);
 			baseurl+="&recruitPageCount=20";
 			System.out.println(baseurl);
@@ -299,18 +303,115 @@ public class HomeController {
 			         	break;
 
 		
-		default:
+		case "Indeed":
+			switch(location) {
+			case "서울":
+				location="&l=서울";
+				break;
+			case "인천":
+				location="&l=인천";
+				break;
+			case "경기":
+				location="&l=경기";
+				break;
+			case "부산":
+				location="&l=부산";
+				break;
+			case "대구":
+				location="&l=대구";
+				break;
+			case "광주":
+				location="&l=광주";
+				break;
+			case "대전":
+				location="&l=대전";
+				break;
+			case "울산":
+				location="&l=울산";
+				break;
+			case "세종":
+				location="&l=세종";
+				break;
+			case "강원":
+				location="&l=강원";
+				break;
+			case "경남":
+				location="&l=경남";
+				break;
+			case "경북":
+				location="&l=경북";
+				break;
+			case "전남":
+				location="&l=전남";
+				break;
+			case "전북":
+				location="&l=전북";
+				break;
+			case "충남":
+				location="&l=충남";
+				break;
+			case "충북":
+				location="&l=충북";
+				break;
+			case "제주":
+				location="&l=제주";
+				break;
+			default: 
+				location="";
+			break;
+			}
+			
+			switch(jobtype) {
+			case "정규직":
+				jobtype = "&jt=fulltime";
+				break;
+			case "계약직":
+				jobtype = "&jt=contract";
+				break;
+			case "인턴":
+				jobtype = "&jt=internship";
+				break;
+			case "아르바이트":
+				jobtype = "&jt=parttime";
+				break;
+			case "병역특례":
+				jobtype = "&jt=new_grad";
+				break;
+			default: 
+				jobtype = "";
+				break;
+			}
+			
+			switch(pay) {
+			case "2000만원 이상":
+				pay = "+원20000000";
+				break;
+			case "3000만원 이상":
+				pay = "+원30000000";
+				break;
+			case "4000만원 이상":
+				pay = "+원40000000";
+				break;
+			case "5000만원 이상":
+				pay = "+원50000000";
+				break;
+			default: 
+				pay = "";
+				break;
+			}
 			baseurl="https://kr.indeed.com/jobs?q=";
 			baseurl+=searchvalue;
-			baseurl+=("&l="+location);
+			baseurl+=pay;
+			baseurl+=location;
 			baseurl+="&start=20";
 			System.out.println(baseurl);
 
 			jvo=idao.getSearchResult(baseurl);
-			
-			
 			break;
 			
+		default:
+			//전체(포탈 검색)일 경우
+			break;
 		}
 
 		
