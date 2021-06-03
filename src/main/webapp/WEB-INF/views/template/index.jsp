@@ -21,7 +21,7 @@
 	text-shadow: black 0.2em 0.2em 0.2em;
 	color: white;
 	height: 300px;
-	background-image: url('resources/images/suwontwo.JPG');
+	background-image: url('resources/images/suwontwo.jpg');
 	background-size: 70% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
