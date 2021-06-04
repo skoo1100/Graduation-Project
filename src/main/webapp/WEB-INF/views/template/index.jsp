@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -53,19 +53,19 @@ background:red;
 			<c:if test="${not empty Sid }">
 
 				<c:if test="${empty bank }">
-					<p class="text-center">Á¶È¸ ÇÒ ¼ö ÀÖ´Â °èÁÂ°¡ ¾ø½À´Ï´Ù. ¼Ò¼Ó °ú ÇÐ»ýÈ¸¿¡ ¹®ÀÇ ÇÏ¼¼¿ä</p>
+					<p class="text-center">ì¡°íšŒ í•  ìˆ˜ ìžˆëŠ” ê³„ì¢Œê°€ ì—†ìŠµë‹ˆë‹¤. ì†Œì† ê³¼ í•™ìƒíšŒì— ë¬¸ì˜ í•˜ì„¸ìš”</p>
 				</c:if>
 				<c:if test="${not empty bank }">
 					<h1 class="text-center">${bank.getBname() }</h1>
 					<p class="text-center">${bank.getBrest() }</p>
 					<c:if test="${Siscouncil>='1' }">
 						<center>
-							<button onclick="location='/web/purchase.do'">±¸¸Å ³»¿ª µî·ÏÇÏ±â</button>
+							<button onclick="location='/web/purchase.do'">êµ¬ë§¤ ë‚´ì—­ ë“±ë¡í•˜ê¸°</button>
 						</center>
 
 					</c:if>
 					<center>
-						<button onclick="location='/web/blistall.do'">È¸ºñ ÀÔÃâ ³»¿ª º¸±â</button>
+						<button onclick="location='/web/blistall.do'">íšŒë¹„ ìž…ì¶œ ë‚´ì—­ ë³´ê¸°</button>
 					</center>
 				</c:if>
 
@@ -82,7 +82,7 @@ background:red;
 					<form accept-charset="UTF-8" role="form" action="search.do"
 						method="get">
 						<input type="text" name="searchvalue" class="input_company"
-							placeholder=" °Ë»ö¾î ÀÔ·Â" /> <select class="input_potal"
+							placeholder=" ê²€ìƒ‰ì–´ ìž…ë ¥" /> <select class="input_potal"
 							name="sitetype">
 							
 							<option>Job-korea</option>
@@ -91,39 +91,39 @@ background:red;
 						</select> <select class="input_location" name="location">
 
 							
-							<option selected>¼­¿ï</option>
-							<option>°æ±â</option>
-							<option>ÀÎÃµ</option>
-							<option>ºÎ»ê</option>
-							<option>´ë±¸</option>
-							<option>±¤ÁÖ</option>
-							<option>´ëÀü</option>
-							<option>¿ï»ê</option>
-							<option>¼¼Á¾</option>
-							<option>°­¿ø</option>
-							<option>°æ³²</option>
-							<option>°æºÏ</option>
-							<option>Àü³²</option>
-							<option>ÀüºÏ</option>
-							<option>Ãæ³²</option>
-							<option>ÃæºÏ</option>
-							<option>Á¦ÁÖ</option>
+							<option selected>ì„œìš¸</option>
+							<option>ê²½ê¸°</option>
+							<option>ì¸ì²œ</option>
+							<option>ë¶€ì‚°</option>
+							<option>ëŒ€êµ¬</option>
+							<option>ê´‘ì£¼</option>
+							<option>ëŒ€ì „</option>
+							<option>ìš¸ì‚°</option>
+							<option>ì„¸ì¢…</option>
+							<option>ê°•ì›</option>
+							<option>ê²½ë‚¨</option>
+							<option>ê²½ë¶</option>
+							<option>ì „ë‚¨</option>
+							<option>ì „ë¶</option>
+							<option>ì¶©ë‚¨</option>
+							<option>ì¶©ë¶</option>
+							<option>ì œì£¼</option>
 						</select> <select class="input_jobtype" name="jobtype">
 
 						
-							<option selected>Á¤±ÔÁ÷</option>
-							<option>°è¾àÁ÷</option>
-							<option>ÀÎÅÏ</option>
-							<option>¾Æ¸£¹ÙÀÌÆ®</option>
-							<option>º´¿ªÆ¯·Ê</option>
+							<option selected>ì •ê·œì§</option>
+							<option>ê³„ì•½ì§</option>
+							<option>ì¸í„´</option>
+							<option>ì•„ë¥´ë°”ì´íŠ¸</option>
+							<option>ë³‘ì—­íŠ¹ë¡€</option>
 
 						</select><select class="input_pay" name="pay">
 			
-							<option selected>2000¸¸¿ø ÀÌ»ó</option>
-							<option>3000¸¸¿ø ÀÌ»ó</option>
-							<option>4000¸¸¿ø ÀÌ»ó</option>
-							<option>5000¸¸¿ø ÀÌ»ó</option>
-						</select> <input type="submit" value="°Ë»ö" class="search_btn">
+							<option selected>2000ë§Œì› ì´ìƒ</option>
+							<option>3000ë§Œì› ì´ìƒ</option>
+							<option>4000ë§Œì› ì´ìƒ</option>
+							<option>5000ë§Œì› ì´ìƒ</option>
+						</select> <input type="submit" value="ê²€ìƒ‰" class="search_btn">
 
 					</form>
 				</div>
@@ -139,7 +139,7 @@ background:red;
 
 						<table class="table">
 						<thead>		<tr style="text-align:center"><td>	
-						<a href="lecture.jsp?lectureName=C"> Top 10 °Ë»ö¾î&nbsp; <span
+						<a href="lecture.jsp?lectureName=C"> Top 10 ê²€ìƒ‰ì–´&nbsp; <span
 								class="badge">Ranking Top 10!!</span></a></td></tr></thead>
 
 						<c:if test="${!empty ranking }">
@@ -158,7 +158,7 @@ background:red;
 			
 					<table class="table">
 					<thead><tr style="text-align:center"><td>
-							<a href="lecture.jsp?lectureName=Java">Ãë¾÷ ´º½º&nbsp;<span
+							<a href="lecture.jsp?lectureName=Java">ì·¨ì—… ë‰´ìŠ¤&nbsp;<span
 								class="badge">News</span></a></td></tr>
 </thead>
 

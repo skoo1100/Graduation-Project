@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +17,7 @@
 	
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-			data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><!-- Å©±â¸¦ ÁÙ¿´À»¶§ ³ªÅ¸³ª´Â ¹öÆ° -->
+			data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><!-- í¬ê¸°ë¥¼ ì¤„ì˜€ì„ë•Œ ë‚˜íƒ€ë‚˜ëŠ” ë²„íŠ¼ -->
 				<span class="sr-only"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>

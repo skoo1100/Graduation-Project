@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
 		<br>
 		<div class="row">
 			<div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2021</h5><h5>Pigeon </h5></div>
-			<div class="col-sm-8"><h4>created by<h4><p>±è»ê, ¿©½Â±¸</p></div>
+			<div class="col-sm-8"><h4>created by<h4><p>ê¹€ì‚°, ì—¬ìŠ¹êµ¬</p></div>
 
 			<div class="col-sm-2"><h4 style="text-align:center;"><span class="glyphicon glyphicon-ok"></span>&nbsp; by Pigeon</h4></div>
 	</div>

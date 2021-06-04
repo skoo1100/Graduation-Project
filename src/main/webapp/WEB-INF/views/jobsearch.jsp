@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -52,7 +52,7 @@ vertical-align:-0.4em;
 		<div class="panel-heading">
 			<h3 class="panel-title">
 				<span class="glyphicon glyphicon-tags"></span>
-				&nbsp;&nbsp;°Ë»ö °á°ú&nbsp;
+				&nbsp;&nbsp;ê²€ìƒ‰ ê²°ê³¼&nbsp;
 				
 			</h3>
 		</div>
@@ -66,7 +66,7 @@ vertical-align:-0.4em;
 					<form accept-charset="UTF-8" role="form" action="search.do"
 						method="get">
 						<input type="text" name="searchvalue" class="input_company"
-							placeholder=" °Ë»ö¾î ÀÔ·Â" /> <select class="input_potal"
+							placeholder=" ê²€ìƒ‰ì–´ ìž…ë ¥" /> <select class="input_potal"
 							name="sitetype">
 			
 							<option>Job-korea</option>
@@ -74,49 +74,49 @@ vertical-align:-0.4em;
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
 			
-							<option selected>¼­¿ï</option>
-							<option>°æ±â</option>
-							<option>ÀÎÃµ</option>
-							<option>ºÎ»ê</option>
-							<option>´ë±¸</option>
-							<option>±¤ÁÖ</option>
-							<option>´ëÀü</option>
-							<option>¿ï»ê</option>
-							<option>¼¼Á¾</option>
-							<option>°­¿ø</option>
-							<option>°æ³²</option>
-							<option>°æºÏ</option>
-							<option>Àü³²</option>
-							<option>ÀüºÏ</option>
-							<option>Ãæ³²</option>
-							<option>ÃæºÏ</option>
-							<option>Á¦ÁÖ</option>
+							<option selected>ì„œìš¸</option>
+							<option>ê²½ê¸°</option>
+							<option>ì¸ì²œ</option>
+							<option>ë¶€ì‚°</option>
+							<option>ëŒ€êµ¬</option>
+							<option>ê´‘ì£¼</option>
+							<option>ëŒ€ì „</option>
+							<option>ìš¸ì‚°</option>
+							<option>ì„¸ì¢…</option>
+							<option>ê°•ì›</option>
+							<option>ê²½ë‚¨</option>
+							<option>ê²½ë¶</option>
+							<option>ì „ë‚¨</option>
+							<option>ì „ë¶</option>
+							<option>ì¶©ë‚¨</option>
+							<option>ì¶©ë¶</option>
+							<option>ì œì£¼</option>
 						</select> <select class="input_jobtype" name="jobtype">
 			
-							<option selected>Á¤±ÔÁ÷</option>
-							<option>°è¾àÁ÷</option>
-							<option>ÀÎÅÏ</option>
-							<option>¾Æ¸£¹ÙÀÌÆ®</option>
-							<option>º´¿ªÆ¯·Ê</option>
+							<option selected>ì •ê·œì§</option>
+							<option>ê³„ì•½ì§</option>
+							<option>ì¸í„´</option>
+							<option>ì•„ë¥´ë°”ì´íŠ¸</option>
+							<option>ë³‘ì—­íŠ¹ë¡€</option>
 
 						</select><select class="input_pay" name="pay">
 							
-							<option selected>2000¸¸¿ø ÀÌ»ó</option>
-							<option>3000¸¸¿ø ÀÌ»ó</option>
-							<option>4000¸¸¿ø ÀÌ»ó</option>
-							<option>5000¸¸¿ø ÀÌ»ó</option>
+							<option selected>2000ë§Œì› ì´ìƒ</option>
+							<option>3000ë§Œì› ì´ìƒ</option>
+							<option>4000ë§Œì› ì´ìƒ</option>
+							<option>5000ë§Œì› ì´ìƒ</option>
 
-						</select> <input type="submit" value="°Ë»ö" class="search_btn">
+						</select> <input type="submit" value="ê²€ìƒ‰" class="search_btn">
 
 					</form>
 				</div>
 			</div></td>
 
-  			<td colspan="5" align="right"> ÃÑ ³»¿ª ¸ñ·Ï : <b> ${count} </b>°³
+  			<td colspan="5" align="right"> ì´ ë‚´ì—­ ëª©ë¡ : <b> ${count} </b>ê°œ
 
   			</tr>
 			<tr>
-			<th>Title</th>	<th>È¸»ç¸í</th>	
+			<th>Title</th>	<th>íšŒì‚¬ëª…</th>	
 			</tr>
 			</thead>
 			<tbody>
@@ -144,7 +144,13 @@ vertical-align:-0.4em;
 		</div></div>
 	</div>
 </div>
-<h3><ul style="float:left"><il><a href="#">[1]&nbsp;</a></il><il><a href="#">[2]&nbsp;</a></il><il><a href="#">[3]&nbsp;</a></il><il><a href="#">[4]&nbsp;</a></il><il><a href="#">[5]&nbsp;</a></il><il><a href="#">[6]&nbsp;</a></il><il><a href="#">[7]&nbsp;</a></il><il><a href="#">[8]&nbsp;</a></il><il><a href="#">[9]&nbsp;</a></il><il><a href="#">[10]&nbsp;</a></il></ul></h3>
+
+<h3><ul style="float:left"><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=1">[1]&nbsp;</a></il>
+<il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=2">[2]&nbsp;</a></il><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=3">[3]&nbsp;</a></il>
+<il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=4">[4]&nbsp;</a></il><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=5">[5]&nbsp;</a></il>
+<il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=6">[6]&nbsp;</a></il><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=7">[7]&nbsp;</a></il>
+<il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=8">[8]&nbsp;</a></il><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=9">[9]&nbsp;</a>
+</il><il><a href="search.do?searchvalue=${searchvalue}&sitetype=${sitetype }&location=${location}&jobtype=${jobtype}&pay=${pay}&page=10">[10]&nbsp;</a></il></ul></h3>
 <div style="height:200px"></div>
 <div class="footer">
 <%@include file="./template/footer.jsp"%></div>

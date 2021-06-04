@@ -75,8 +75,19 @@ public class HomeController {
 	}
 
 	@RequestMapping("/search.do")
-	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype,String pay) {
+	public String search(Model m,String searchvalue,String sitetype,String location,String jobtype,String pay,String page) {
 		//searchvalue/sitetype/location/jobtype/pay
+		m.addAttribute("searchvalue",searchvalue);
+		m.addAttribute("sitetype",sitetype);
+		m.addAttribute("location",location);
+		m.addAttribute("jobtype",jobtype);
+		m.addAttribute("pay",pay);
+		m.addAttribute("page",page);
+		if (page==null) {
+			page="1";
+		}
+		
+		
 
 		ArrayList<jobVO> jvo = null;
 		String baseurl;
@@ -185,7 +196,9 @@ public class HomeController {
 			baseurl+=location;
 			baseurl+=jobtype;
 			baseurl+=pay;
-			baseurl+="&Page_No=1";
+			
+			baseurl+=("&Page_No="+page);
+			
 			
 			System.out.println(baseurl);
 			jvo=jkdao.getSearchResult(baseurl);
@@ -290,7 +303,7 @@ public class HomeController {
 			baseurl="https://www.saramin.co.kr/zf_user/search/recruit?searchType=search&searchword=";
 			baseurl+=searchvalue;
 			baseurl+="&recruitPage=";
-			baseurl+="1";
+			baseurl+=page;
 			baseurl+="&jobtype=";
 			baseurl+=jobtype;
 			
@@ -343,9 +356,14 @@ public class HomeController {
 				break;
 			}
 			baseurl="https://kr.indeed.com/jobs?q=";
-			baseurl+=(searchvalue+pay);
+			baseurl+=(searchvalue+" 원"+pay);
 			baseurl+=("&l="+location);
-			baseurl+="&start=20";
+			int pn=Integer.parseInt(page);
+			pn*=10;
+			pn-=10;
+			
+			baseurl+="&start=";
+			baseurl+=pn;
 			System.out.println(baseurl);
 
 			jvo=idao.getSearchResult(baseurl);
