@@ -38,7 +38,7 @@
 			<c:if test="${empty Sid }">
 				<center>
 					<div>
-						<h2>로그인 이후 화면이 보입니다.</h2>
+						<h2></h2>
 					</div>
 					<center>
 			</c:if>
@@ -83,8 +83,8 @@
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
 
-							<option selected>전체(희망 지역)</option>
-							<option>서울</option>
+							
+							<option selected>서울</option>
 							<option>경기</option>
 							<option>인천</option>
 							<option>부산</option>
@@ -103,16 +103,16 @@
 							<option>제주</option>
 						</select> <select class="input_jobtype" name="jobtype">
 
-							<option selected>전체(근무 형태)</option>
-							<option>정규직</option>
+						
+							<option selected>정규직</option>
 							<option>계약직</option>
 							<option>인턴</option>
 							<option>아르바이트</option>
 							<option>병역특례</option>
 
 						</select><select class="input_pay" name="pay">
-							<option selected>전체(연봉)</option>
-							<option>2000만원 이상</option>
+			
+							<option selected>2000만원 이상</option>
 							<option>3000만원 이상</option>
 							<option>4000만원 이상</option>
 							<option>5000만원 이상</option>

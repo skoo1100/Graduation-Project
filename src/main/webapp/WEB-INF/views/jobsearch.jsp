@@ -68,8 +68,8 @@ vertical-align:-0.4em;
 						<input type="text" name="searchvalue" class="input_company"
 							placeholder=" 검색어 입력" /> <select class="input_potal"
 							name="sitetype">
-							<option>전체 (포탈 선택)</option>
-							<option>Job-korea</option>
+						
+							<option selected>Job-korea</option>
 							<option>Saram-in</option>
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
@@ -92,16 +92,16 @@ vertical-align:-0.4em;
 							<option>충북</option>
 							<option>제주</option>
 						</select> <select class="input_jobtype" name="jobtype">
-							<option selected>전체(근무 형태)</option>
-							<option>정규직</option>
+			
+							<option selected>정규직</option>
 							<option>계약직</option>
 							<option>인턴</option>
 							<option>아르바이트</option>
 							<option>병역특례</option>
 
 						</select><select class="input_pay" name="pay">
-							<option selected>전체(연봉)</option>
-							<option>2000만원 이상</option>
+							
+							<option selected>2000만원 이상</option>
 							<option>3000만원 이상</option>
 							<option>4000만원 이상</option>
 							<option>5000만원 이상</option>
@@ -111,7 +111,7 @@ vertical-align:-0.4em;
 					</form>
 				</div>
 			</div></td>
-  				<td colspan="5" align="right"> 총 내역 목록 : <b>  </b>개
+  				<td colspan="5" align="right"> 총 내역 목록 : <b> ${count} </b>개
   			</tr>
 			<tr>
 			<th>Title</th>	<th>회사명</th>	
