@@ -144,8 +144,8 @@ vertical-align:-0.4em;
 		</div></div>
 	</div>
 </div>
+<h3><ul style="float:left"><il><a href="#">[1]&nbsp;</a></il><il><a href="#">[2]&nbsp;</a></il><il><a href="#">[3]&nbsp;</a></il><il><a href="#">[4]&nbsp;</a></il><il><a href="#">[5]&nbsp;</a></il><il><a href="#">[6]&nbsp;</a></il><il><a href="#">[7]&nbsp;</a></il><il><a href="#">[8]&nbsp;</a></il><il><a href="#">[9]&nbsp;</a></il><il><a href="#">[10]&nbsp;</a></il></ul></h3>
 <div style="height:200px"></div>
-
 <div class="footer">
 <%@include file="./template/footer.jsp"%></div>
 </body>
