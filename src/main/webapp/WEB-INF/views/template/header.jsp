@@ -27,16 +27,7 @@
 			
 
 		</div>	
-		
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- 네비 중간 대부분을 차지함 -->
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-					aria-haspopup="true" aria-expanded="false"><c:if test="${empty Sid }">login or register</c:if><c:if test="${not empty Sid }">${Sid } 님 환영합니다.</c:if><span class="caret"></span></a>
-	
-			
-		</div>
+
 	</div>
 </nav>
 

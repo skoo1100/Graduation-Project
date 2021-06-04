@@ -68,13 +68,13 @@ vertical-align:-0.4em;
 						<input type="text" name="searchvalue" class="input_company"
 							placeholder=" 검색어 입력" /> <select class="input_potal"
 							name="sitetype">
-						
-							<option selected>Job-korea</option>
+			
+							<option>Job-korea</option>
 							<option>Saram-in</option>
 							<option>Indeed</option>
 						</select> <select class="input_location" name="location">
-							<option selected>전체(희망 지역)</option>
-							<option>서울</option>
+			
+							<option selected>서울</option>
 							<option>경기</option>
 							<option>인천</option>
 							<option>부산</option>
@@ -111,7 +111,9 @@ vertical-align:-0.4em;
 					</form>
 				</div>
 			</div></td>
-  				<td colspan="5" align="right"> 총 내역 목록 : <b> ${count} </b>개
+
+  			<td colspan="5" align="right"> 총 내역 목록 : <b> ${count} </b>개
+
   			</tr>
 			<tr>
 			<th>Title</th>	<th>회사명</th>	
