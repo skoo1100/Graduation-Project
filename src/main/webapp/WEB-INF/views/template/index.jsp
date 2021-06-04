@@ -8,8 +8,13 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/bootstrap.css">
 <link rel="stylesheet" href="resources/css/customize.css">
-<link rel="stylesheet" href="resources/css/template.css">
+ <link rel="stylesheet" href="resources/css/template.css"> 
 </head>
+<style>
+body{
+background-image:url('../images/dgu.JPG');
+background:red;
+}</style>
 <body class="body">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
@@ -30,6 +35,7 @@
 	width: 100%;
 	height: 500px;
 }
+
 </style>
 	<%@include file="header.jsp"%>
 	<div class="container">
