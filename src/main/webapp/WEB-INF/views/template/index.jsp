@@ -27,6 +27,7 @@ background:red;
 	color: white;
 	height: 300px;
 	background-image: url('resources/images/logo.png');
+
 	background-size: 70% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
